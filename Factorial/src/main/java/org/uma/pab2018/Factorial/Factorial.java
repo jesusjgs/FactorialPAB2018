@@ -5,13 +5,18 @@ public class Factorial {
 	public int compute(int number) {
 		// TODO Auto-generated method stub
 		int result;
-		if(number==0 || number==1) {
-			result=1;
+		if(number < 0) {
+			throw new RuntimeException("");
 		}
 		else {
-			result=2;
+			if (number == 0 || number == 1) {
+				result = 1;
+			} else {
+				result = number * compute(number - 1);
+			}
 		}
 		return result;
 	}
+		
 
 }
